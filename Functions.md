@@ -1,4 +1,4 @@
-## Serial Port VBA Functions - simplified set
+## Serial Port VBA Functions - Arduino set
 
 ##### All functions support one pre-defined Com Port only
 
@@ -12,11 +12,10 @@
 | `send_arduino("QWERTY")`       | `Boolean` [^1] | Sends [^2] supplied character string to com port                                      |
 | `send_arduino(COMMANDS)`       | `Boolean` [^1] | Sends [^2] character string defined in VBA constant or variable COMMANDS to com port  |
 | `send_arduinot($B$5)`          | `Boolean` [^1] | Sends [^4] contents of Cell $B$5 to com port (Excel Worksheet Only)                   |
-| `device_ready`                 | `Boolean`      | Returns `True` if port started and Data Set Ready (DSR) input signal active           |
 | `stop_arduino`                 | `Boolean` [^1] | Stops com port and returns its control back to Windows                                |
 
 ##### Com Port number defined in declarations section at start of module   
-`Private Const COM_PORT_NUMBER as Long = 1`    
+`Private Const COM_PORT_NUMBER as Long = 4`    
 
 [^1]: Function returns `True` if successful, otherwise `False`  
 
@@ -25,7 +24,7 @@
       
 [^3]: Maximum characters returned = read buffer length (fixed value)    
       More waiting characters beyond buffer length may remain unread.   
-      Use `check_com_port` to confirm any remaining character count if required.   
+      Use `check_arduino` to confirm any remaining character count if required.   
       
 [^4]:  Excel will re-send if Cell $B$5 value changes     
       
