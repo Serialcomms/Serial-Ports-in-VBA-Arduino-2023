@@ -2,7 +2,7 @@
 Arduino R3 serial version
 # Serial Port functions in VBA Simple 2022
 
-This is the VBA Serial Port function set for use with Arduino devices.
+This is the VBA Serial Port function set adapted for use with Arduino devices.
 
 No debug or extended transmit & receive functionality is provided. 
 
