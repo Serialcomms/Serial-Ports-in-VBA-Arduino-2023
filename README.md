@@ -33,7 +33,7 @@ Functions can be used directly in Excel cells as Formulas where appropriate.
   
 _Assume that all data has already been sent by the Arduino is ready waiting to be read_
 
-- `check_com_port` can be used to confirm expected number of characters are waiting before committing read 
+- `check_arduino` can be used to confirm expected number of characters are waiting before committing read 
 
 - No pre or post read delays for any in-flight data reception to complete are provided.
   
