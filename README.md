@@ -4,8 +4,6 @@ Arduino R3 serial version
 
 This is the VBA Serial Port function set for use with Arduino devices.
 
-Requires that the Arduino COM Port Drivers are correctly installed and configured.
-
 No debug or extended transmit & receive functionality is provided. 
 
 No other files, licences, payments or registrations are required.  
@@ -15,11 +13,13 @@ Functions can be used directly in Excel cells as Formulas where appropriate.
 
 <details>
 
-<summary>Com Ports</summary>
+<summary>Com Port</summary>
 
 <p>
   
-- Functions work with correctly installed Arduino Serial Com Port Drivers
+- Requires that the Arduino COM Port Driver is correctly installed and configured.
+- Correct COM Port Number is defined at start of VBA module.
+
 
 </p>
 
