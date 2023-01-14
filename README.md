@@ -4,13 +4,11 @@ Arduino R3 serial version
 
 This is the VBA Serial Port function set adapted for use with Arduino devices.
 
-No debug or extended transmit & receive functionality is provided. 
-
 No other files, licences, payments or registrations are required.  
 
 Functions can be used directly in Excel cells as Formulas where appropriate. 
 
-No Arduino reboot on com port connection by design
+No Arduino reboot on com port connection by design.
 
 Separate arduino reboot command if required. 
 
