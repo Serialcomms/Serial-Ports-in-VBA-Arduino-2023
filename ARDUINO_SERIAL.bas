@@ -219,8 +219,6 @@ Public Function OPEN_ARDUINO() As Boolean
 Dim OPEN_RESULT As Boolean
 
 If OPEN_COM_PORT(ARDUINO) Then
-
-    Kernel_Sleep_MilliSeconds 1
     
     CLEAR_ARDUINO
     
