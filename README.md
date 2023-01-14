@@ -79,11 +79,7 @@ Writes are synchronous and functions can block until outgoing data is processed 
 - Function returns number of characters waiting to be read   
 - Return number can be zero if no data waiting  
 - Return value of -1 indicates error, including port not started 
-  
-### Device Ready Check ###  
-
-- Function returns `True` if port started and **Data Set Ready** input signal is active 
-   
+     
 </p>  
   
 </details>
