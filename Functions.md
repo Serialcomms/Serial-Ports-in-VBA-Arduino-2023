@@ -4,7 +4,7 @@
 
 | VBA Function                   |    Returns     | Description                                                                           |
 | -------------------------------|----------------|---------------------------------------------------------------------------------------|
-| `start_arduino`                | `Boolean` [^1] | Starts Arduino com port with pre-configured settings                                  |
+| `start_arduino`                | `Boolean` [^1] | Starts Arduino com port with pre-configured settings (supplied)                             |
 | `clear_arduino`                | `Boolean` [^1] | Clears any unread receive data or data awaiting transmission                          |
 | `check_arduino`                | `Long`         | Returns number of read characters waiting. -1 indicates error                         |
 | `get_arduino`                  | `String`       | Returns a single waiting character string from Arduino                                |
