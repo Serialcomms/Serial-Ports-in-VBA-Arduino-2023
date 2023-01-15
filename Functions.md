@@ -12,7 +12,7 @@
 | `put_arduino("A")`             | `Boolean` [^1] | Send a single character string to Arduino                                             |
 | `send_arduino("QWERTY")`       | `Boolean` [^1] | Sends [^2] supplied character string to Arduino                                       |
 | `send_arduino(COMMANDS)`       | `Boolean` [^1] | Sends [^2] character string defined in VBA constant or variable COMMANDS to Arduino   |
-| `send_arduino($B$5)`           | `Boolean` [^1] | Sends [^4] contents of Cell $B$5 to com port (Excel Worksheet Only)                   |
+| `send_arduino($B$5)`           | `Boolean` [^1] | Sends [^4] contents of Cell $B$5 to Arduino (Excel Worksheet Only)                   |
 | `reboot_arduino`               | `Boolean` [^1] | Reboots Arduino by toggling DTR line and clears any waiting data                      |
 | `stop_arduino`                 | `Boolean` [^1] | Stops com port and returns its control back to Windows                                |
 
