@@ -42,8 +42,8 @@
 
 */
 
-int SCREEN_ROW;
-int CHANNEL_NUM;
+unsigned int SCREEN_ROW;
+unsigned int CHANNEL_NUM;
 
 char analoguevals[160];
 unsigned int Analogue[6];
@@ -69,14 +69,14 @@ unsigned int BAR_HEIGHT = 20;       // recommended value = 20 or 30
 
 void setup() {
 
-  Serial.setTimeout(0);
   Serial.begin(115200, SERIAL_8N1);
+  pinMode(LED_BUILTIN, OUTPUT);
+  SetAnalogueInputs();
   delay(100);
   ClearScreen();
-  SetAnalogueInputs();
-  pinMode(LED_BUILTIN, OUTPUT);
-
+ 
   NextToggle = (1000 * (millis() / 1000)) + 1000;
+  
 }
 
 void loop() {
@@ -213,7 +213,7 @@ void DrawBarBlock(int CHANNEL, int ROW)
 {
 
 if (Analogue[CHANNEL] / (1020/BAR_HEIGHT) >= BAR_HEIGHT - ROW)
-  
+
   {
     Serial.print(BLOCK_LIT);
   }
