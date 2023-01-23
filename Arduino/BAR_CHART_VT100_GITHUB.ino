@@ -1,7 +1,13 @@
 /*
-  6-channel Analogue Bar Chart Plotter, updates every second.
-  Use with ANSI/VT100 compatible terminal emulator only. 
-  Does not work with Arduino IDE Serial Monitor or Plotter.
+  6-channel Analogue Bar Chart terminal plotter.
+  ==============================================
+
+  Use with ANSI/VT100/UTF-8 compatible terminal emulator only.
+  
+  Runs continually and updates screen and inbuilt LED every second.
+  
+  Sketch will not work as intended with Arduino IDE Serial Monitor or Plotter.
+
 
   Sample output
   =============
@@ -31,6 +37,9 @@
   ║    0957    │    0000    │    0824    │    0746    │    0747    │    1021    ║
   ╚════════════╧════════════╧════════════╧════════════╧════════════╧════════════╝
 
+  Adjust terminal emulator font settings for artefact-free display. 
+  Lucida Console (16-point, non anti-aliased) works well with PuTTy.
+
 */
 
 int SCREEN_ROW;
@@ -46,13 +55,15 @@ const char BOX_TOP[] PROGMEM = "╔═══════════════
 const char BOX_MID[] PROGMEM = "╠════════════╤════════════╤════════════╤════════════╤════════════╤════════════╣";
 const char BOX_END[] PROGMEM = "╚════════════╧════════════╧════════════╧════════════╧════════════╧════════════╝";
 
+const char BOX_VERTICAL[] = "║";
+
 const char BLOCK_LIT[] = "▐██████████▌";    // three separate block characters : 1 * half-right block, 10 * full-blocks, 1* half-left block
 const char BLOCK_OFF[] = "            ";    // 12 spaces
 
 const char CURSOR_HOME[]="\x1B[H";
 const String ASCII_ESCAPE = "\x1B";
 
-// User-Defined settings
+// User-defined settings
 // =================================================================
 bool ANALOGUE_PULLUPS = false;      // sets all analogue inputs
 unsigned int BAR_HEIGHT = 20;       // recommended value = 20 or 30
@@ -151,7 +162,7 @@ void Build_VT100_Screen()
 
   {
 
-    Serial.print("║");
+    Serial.print(BOX_VERTICAL);
 
     for (CHANNEL_NUM = 0; CHANNEL_NUM < 6; CHANNEL_NUM++)
 
@@ -165,7 +176,7 @@ void Build_VT100_Screen()
 
     }
 
-    Serial.println("║");
+    Serial.println(BOX_VERTICAL);
 
   }
  
@@ -199,23 +210,25 @@ void ClearScreen()
   Serial.print(ASCII_ESCAPE + "[1m");       // bold text
   Serial.print(ASCII_ESCAPE + "[36m");      // cyan text
   Serial.print(ASCII_ESCAPE + "[40m");      // black background
-  
   Serial.print(ASCII_ESCAPE + "[?25l");     // hide cursor (reduce flicker)
 
-  // Serial.print(ASCII_ESCAPE + "[?25h");  // show cursor 
+  /*
+
+  Serial.print(ASCII_ESCAPE + "[?25h");  // show cursor 
   
-  // Serial.print(ASCII_ESCAPE + "[0m");    // default settings
-  // Serial.print(ASCII_ESCAPE + "[1m");    // text bold = on
-  // Serial.print(ASCII_ESCAPE + "[2m");    // text bold = off
+  Serial.print(ASCII_ESCAPE + "[0m");    // default settings
+  Serial.print(ASCII_ESCAPE + "[1m");    // text bold = on
+  Serial.print(ASCII_ESCAPE + "[2m");    // text bold = off
 
-  // Serial.print(ASCII_ESCAPE + "[31m");   // text = red
-  // Serial.print(ASCII_ESCAPE + "[32m");   // text = green
-  // Serial.print(ASCII_ESCAPE + "[33m");   // text = yellow
-  // Serial.print(ASCII_ESCAPE + "[34m");   // text = blue
-  // Serial.print(ASCII_ESCAPE + "[35m");   // text = magenta
-  // Serial.print(ASCII_ESCAPE + "[36m");   // text = cyan
-  // Serial.print(ASCII_ESCAPE + "[37m");   // text = white
+  Serial.print(ASCII_ESCAPE + "[31m");   // text = red
+  Serial.print(ASCII_ESCAPE + "[32m");   // text = green
+  Serial.print(ASCII_ESCAPE + "[33m");   // text = yellow
+  Serial.print(ASCII_ESCAPE + "[34m");   // text = blue
+  Serial.print(ASCII_ESCAPE + "[35m");   // text = magenta
+  Serial.print(ASCII_ESCAPE + "[36m");   // text = cyan
+  Serial.print(ASCII_ESCAPE + "[37m");   // text = white
 
+  */
 }
 
 void PrintFlashString(const char * FLASH_STRING, bool LINE_END)
@@ -224,6 +237,5 @@ void PrintFlashString(const char * FLASH_STRING, bool LINE_END)
   Serial.print( (__FlashStringHelper *) FLASH_STRING) ;
 
   if(LINE_END) {Serial.println(); }
-
 }
 
