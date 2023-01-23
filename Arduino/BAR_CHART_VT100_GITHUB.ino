@@ -44,7 +44,6 @@
 
 int SCREEN_ROW;
 int CHANNEL_NUM;
-bool DRAW_BLOCK;
 
 char analoguevals[160];
 unsigned int Analogue[6];
