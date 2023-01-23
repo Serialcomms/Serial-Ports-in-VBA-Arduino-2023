@@ -212,8 +212,8 @@ void DrawBarBlock(int CHANNEL, int ROW)
 
 {
 
-if ((Analogue[CHANNEL] / (1020/BAR_HEIGHT)) >= (BAR_HEIGHT - ROW))
-
+if (Analogue[CHANNEL] / (1020/BAR_HEIGHT) >= BAR_HEIGHT - ROW)
+  
   {
     Serial.print(BLOCK_LIT);
   }
