@@ -49,7 +49,6 @@ bool DRAW_BLOCK;
 char analoguevals[160];
 unsigned int Analogue[6];
 unsigned long NextToggle;
-unsigned long milliSeconds;
 
 const char BOX_TOP[] PROGMEM = "╔═════════════════════════════════════════════════════════════════════════════╗";
 const char BOX_MID[] PROGMEM = "╠════════════╤════════════╤════════════╤════════════╤════════════╤════════════╣";
@@ -83,9 +82,7 @@ void setup() {
 
 void loop() {
 
-  milliSeconds = millis();
-
-  if (milliSeconds < NextToggle)
+  if (millis() < NextToggle)
 
   {
     Read_Analogue_Inputs();
@@ -99,7 +96,7 @@ void loop() {
 
     Toggle_Builtin_LED();
 
-    NextToggle = (1000 * milliSeconds / 1000) + 1000;
+    NextToggle = (1000 * millis() / 1000) + 1000;
 
   }
 }
@@ -133,23 +130,6 @@ void Read_Analogue_Inputs() {
 
 }
 
-String Build_BAR_BLOCK(bool DRAW_BLOCK)
-
-{
-  if (DRAW_BLOCK)
-
-  {
-   return BLOCK_LIT;
-  }
-
-  else
-
-  {
-   return BLOCK_OFF;
-  }
-}
-
-
 void Build_VT100_Screen()
 
 {
@@ -168,9 +148,7 @@ void Build_VT100_Screen()
 
     {
 
-      DRAW_BLOCK = (((Analogue[CHANNEL_NUM] / (1020/BAR_HEIGHT)) >= (BAR_HEIGHT - SCREEN_ROW)) ? true : false);
-
-      Serial.print(Build_BAR_BLOCK(DRAW_BLOCK));
+      DrawBarBlock(CHANNEL_NUM, SCREEN_ROW);
 
       if (CHANNEL_NUM < 5) { Serial.print(" "); }
 
@@ -229,6 +207,23 @@ void ClearScreen()
   Serial.print(ASCII_ESCAPE + "[37m");   // text = white
 
   */
+}
+
+void DrawBarBlock(int CHANNEL, int ROW)
+
+{
+
+if ((Analogue[CHANNEL] / (1020/BAR_HEIGHT)) >= (BAR_HEIGHT - ROW))
+
+  {
+    Serial.print(BLOCK_LIT);
+  }
+
+else 
+
+  {
+    Serial.print(BLOCK_OFF);
+  }
 }
 
 void PrintFlashString(const char * FLASH_STRING, bool LINE_END)
