@@ -1,11 +1,10 @@
 
-//#include <Wire.h>
-
 /*
   TickTock Serial Port
   Toggles the on-board LED on/off every second
   Sends Arduino milliseconds to com port suffixed with alternating Tick / Tock string 
 */
+
 String RX_Data;
 String TX_Data;
 int REGISTER;
