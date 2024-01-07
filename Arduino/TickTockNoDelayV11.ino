@@ -41,11 +41,7 @@ void loop()
  if (millis() < NextToggle)
 
   {
-    Read_Analogue_Inputs()  ; 
-
-    //digitalWrite(8, ? bitRead(PIND,1):HI);
-
-    
+    Read_Analogue_Inputs();  
   }
 
   else 
