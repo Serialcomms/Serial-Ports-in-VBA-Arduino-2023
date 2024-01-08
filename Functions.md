@@ -9,7 +9,7 @@
 | `check_arduino`                | `Long`         | Returns number of read characters waiting. -1 indicates error                         |
 | `get_arduino`                  | `String`       | Returns a single waiting character string from Arduino                                |
 | `read_arduino`                 | `String`  [^3] | Returns waiting character string from Arduino                                         |
-| `input_arduino`                | `String`       | Returns character string when LF received or character limit reached (configurable)   |
+| `input_arduino`                | `String`  [^5] | Returns character string when LF received or character limit reached (configurable)   |
 | `put_arduino("A")`             | `Boolean` [^1] | Send a single character string to Arduino                                             |
 | `send_arduino("QWERTY")`       | `Boolean` [^1] | Sends [^2] supplied character string to Arduino                                       |
 | `send_arduino(COMMANDS)`       | `Boolean` [^1] | Sends [^2] character string defined in VBA constant or variable COMMANDS to Arduino   |
@@ -29,6 +29,8 @@
       More waiting characters beyond buffer length may remain unread.   
       Use `check_arduino` to confirm any remaining character count if required.   
       
-[^4]:  Excel will re-send if Cell $B$5 value changes     
+[^4]: Excel will re-send if Cell $B$5 value changes
+
+[^5]: Reads one character at a time and returns string when Line Feed detected or character limit count reached
       
-[^5]: Port settings if supplied should have the same structure as the equivalent command-line Mode arguments for a COM Port
+[^6]: Port settings if supplied should have the same structure as the equivalent command-line Mode arguments for a COM Port
