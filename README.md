@@ -92,6 +92,14 @@ Writes are synchronous and functions can block until outgoing data is processed 
 * [COM Port Configuration](https://github.com/Serialcomms/COM-Port-Configuration-VBA)
 
 </p>
+</details>
+
+<details><summary>Functions</summary>
+<p> 
+
+* [Function List Table](Functions.md)
+
+</p>
 </details>  
 
-[Function List Table](Functions.md)
+
