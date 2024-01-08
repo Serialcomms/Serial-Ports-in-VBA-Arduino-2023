@@ -85,4 +85,16 @@ Writes are synchronous and functions can block until outgoing data is processed 
   
 </details>
 
+<details>
+
+<summary>Optional Customisations</summary>
+
+<p>
+
+https://github.com/Serialcomms/COM-Port-Enumeration-VBA
+
+</p>  
+  
+</details>
+
 [Function List Table](Functions.md)
