@@ -4,15 +4,16 @@
 
 | VBA Function                   |    Returns     | Description                                                                           |
 | -------------------------------|----------------|---------------------------------------------------------------------------------------|
-| `start_arduino`                | `Boolean` [^1] | Starts Arduino com port with pre-configured settings (supplied)                             |
+| `start_arduino`                | `Boolean` [^1] | Starts Arduino com port with pre-configured settings (supplied)                       |
 | `clear_arduino`                | `Boolean` [^1] | Clears any unread receive data or data awaiting transmission                          |
 | `check_arduino`                | `Long`         | Returns number of read characters waiting. -1 indicates error                         |
 | `get_arduino`                  | `String`       | Returns a single waiting character string from Arduino                                |
 | `read_arduino`                 | `String`  [^3] | Returns waiting character string from Arduino                                         |
+| `input_arduino`                | `String`       | Returns character string when LF received or character limit reached (configurable)   |
 | `put_arduino("A")`             | `Boolean` [^1] | Send a single character string to Arduino                                             |
 | `send_arduino("QWERTY")`       | `Boolean` [^1] | Sends [^2] supplied character string to Arduino                                       |
 | `send_arduino(COMMANDS)`       | `Boolean` [^1] | Sends [^2] character string defined in VBA constant or variable COMMANDS to Arduino   |
-| `send_arduino($B$5)`           | `Boolean` [^1] | Sends [^4] contents of Cell $B$5 to Arduino (Excel Worksheet Only)                   |
+| `send_arduino($B$5)`           | `Boolean` [^1] | Sends [^4] contents of Cell $B$5 to Arduino (Excel Worksheet Only)                    |
 | `reboot_arduino`               | `Boolean` [^1] | Reboots Arduino by toggling DTR line and clears any waiting data                      |
 | `stop_arduino`                 | `Boolean` [^1] | Stops com port and returns its control back to Windows                                |
 
