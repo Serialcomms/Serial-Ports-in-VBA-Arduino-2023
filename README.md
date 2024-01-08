@@ -94,7 +94,7 @@ Writes are synchronous and functions can block until outgoing data is processed 
 </p>
 </details>
 
-<details><summary>Functions</summary>
+<details><summary>Function List Table</summary>
 <p> 
 
 * [Function List Table](Functions.md)
