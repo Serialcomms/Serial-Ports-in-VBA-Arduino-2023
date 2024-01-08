@@ -85,6 +85,14 @@ Writes are synchronous and functions can block until outgoing data is processed 
   
 </details>
 
+<details><summary>Function List Table</summary>
+<p> 
+
+* [Function List Table](Functions.md)
+
+</p>
+</details> 
+
 <details><summary>Optional Customisations</summary>
 <p> 
 
@@ -93,13 +101,4 @@ Writes are synchronous and functions can block until outgoing data is processed 
 
 </p>
 </details>
-
-<details><summary>Function List Table</summary>
-<p> 
-
-* [Function List Table](Functions.md)
-
-</p>
-</details>  
-
 
